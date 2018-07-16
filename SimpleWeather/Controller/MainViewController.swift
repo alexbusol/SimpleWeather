@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
     //API links:
-    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+    let WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "6eadaf273a536bfe04601969558990de"
     
     let locationManager = CLLocationManager()
@@ -23,7 +23,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var weatherCondition: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Setting up core location manager
@@ -62,9 +62,46 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         cityName.text = "Location Error"
     }
     
+    //MARK: - Working with the API
     //making a request to the API to get the weather data based on our location
     func getWeatherData(url: String, parameters: [String: String]) {
-        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                print("Success")
+                let weatherJSON : JSON = JSON(response.result.value!)
+                print(weatherJSON)
+                self.updateWeatherData(json: weatherJSON)
+            }
+            else {
+                print("Error: \(response.result.error)")
+                self.cityName.text = "Connection Error"
+            }
+        }
+    }
+    
+    //MARK: - JSON Parsing
+    
+    func updateWeatherData(json: JSON) {
+        if let tempResult = json["main"]["temp"].double { //pulls out the temperature value from the JSON.
+            weatherDataModel.temperature = Int(tempResult - 273.15)
+            weatherDataModel.city = json["name"].stringValue
+            weatherDataModel.condition = json["weather"][0]["id"].intValue
+            weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
+            updateUI()
+        }
+        else {
+            cityName.text = "Coudln't fetch the weather"
+        }
+    }
+    
+    func updateUI() {
+        cityName.text = weatherDataModel.city
+        temperatureLabel.text = String(weatherDataModel.temperature)+"℃"
+        weatherImage.image = UIImage(named: weatherDataModel.weatherIconName)
+        weatherCondition.text = weatherDataModel.getWeatherCondition()
+       // backgroundImage.image = UIImage(named: weatherDataModel.weatherIconName + "BG")
+       // backgroundImage.image = UIImage(named: "sunnyBG")
     }
     
 

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "bgbl.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "if_04_cloud_weather_67103.png",
       "scale" : "2x"
     },
     {

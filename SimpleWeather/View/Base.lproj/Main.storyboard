@@ -19,29 +19,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4B-Ng-seY">
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg3" translatesAutoresizingMaskIntoConstraints="NO" id="C4B-Ng-seY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ul9-pd-fMy">
-                                <rect key="frame" x="64" y="483.66666666666669" width="287" height="41.000000000000057"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ul9-pd-fMy">
+                                <rect key="frame" x="64" y="483.33333333333331" width="287" height="47.333333333333314"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-ik-yjd">
-                                <rect key="frame" x="48" y="101" width="318" height="77"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="65"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-ik-yjd">
+                                <rect key="frame" x="48" y="135.33333333333334" width="318" height="59"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="50"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="3CH-NR-tYX" userLabel="temperatureLabel">
-                                <rect key="frame" x="64" y="577" width="287" height="65"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="3CH-NR-tYX" userLabel="temperatureLabel">
+                                <rect key="frame" x="64" y="583" width="287" height="59"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GF9-W2-smM">
-                                <rect key="frame" x="90" y="227.33333333333337" width="235" height="207.66666666666663"/>
+                                <rect key="frame" x="90" y="226.66666666666663" width="235" height="208"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GF9-W2-smM" secondAttribute="height" multiplier="327:281" constant="-7.0498220640569116" id="Zmj-t3-2w4"/>
                                 </constraints>
@@ -61,7 +62,7 @@
                             <constraint firstItem="3CH-NR-tYX" firstAttribute="top" secondItem="Ul9-pd-fMy" secondAttribute="bottom" constant="52.666666666666742" id="YaM-Be-ACe"/>
                             <constraint firstItem="GF9-W2-smM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="Z3R-m4-vSw"/>
                             <constraint firstItem="C4B-Ng-seY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bay-P8-S5c"/>
-                            <constraint firstItem="GF9-W2-smM" firstAttribute="top" secondItem="EZH-ik-yjd" secondAttribute="bottom" constant="49.5" id="sYE-Sk-3VN"/>
+                            <constraint firstItem="GF9-W2-smM" firstAttribute="top" secondItem="EZH-ik-yjd" secondAttribute="bottom" constant="32.5" id="sYE-Sk-3VN"/>
                             <constraint firstAttribute="trailing" secondItem="C4B-Ng-seY" secondAttribute="trailing" id="uGy-Gv-sHh"/>
                             <constraint firstItem="EZH-ik-yjd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="ypY-Hb-LQq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3CH-NR-tYX" secondAttribute="bottom" constant="94" id="zEg-qU-ciU"/>
@@ -72,7 +73,7 @@
                         <outlet property="cityName" destination="EZH-ik-yjd" id="hxq-ya-RGr"/>
                         <outlet property="temperatureLabel" destination="3CH-NR-tYX" id="8uq-4V-SU7"/>
                         <outlet property="weatherCondition" destination="Ul9-pd-fMy" id="xtm-gB-GfM"/>
-                        <outlet property="weatherImage" destination="GF9-W2-smM" id="hMi-tJ-uoz"/>
+                        <outlet property="weatherImage" destination="GF9-W2-smM" id="rYf-2d-eWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,4 +81,7 @@
             <point key="canvasLocation" x="136.23188405797103" y="131.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg3" width="1620" height="2317"/>
+    </resources>
 </document>
