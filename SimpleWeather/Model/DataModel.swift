@@ -63,7 +63,7 @@ class WeatherDataModel {
             
         case 801...802 :
             weatherState = "There are some light clouds in the sky"
-            return "little-coudy"
+            return "little-cloudy"
             
         case 803...804 :
             weatherState = "The sky is covered in clouds"

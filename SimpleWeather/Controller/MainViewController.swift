@@ -11,7 +11,7 @@ import CoreLocation //used for determining user's location
 import Alamofire
 import SwiftyJSON
 
-class MainViewController: UIViewController, CLLocationManagerDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate, ChangeLocationDelegate {
     //API links:
     let WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "6eadaf273a536bfe04601969558990de"
@@ -31,6 +31,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,6 +106,18 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
        // backgroundImage.image = UIImage(named: "sunnyBG")
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeCityName" {
+            let destinationVC = segue.destination as! ChangeLocationVC //the datatype of segue destination
+            destinationVC.delegate = self
+        }
+    }
+    
+    func cityNameEntered(cityName: String) {
+        //  print(city)
+        let params : [String : String] = ["q" : cityName, "appID" : APP_ID] //q is the key specified in  the API
+        getWeatherData(url: WEATHER_URL, parameters: params)
+    }
+    
 }
 
